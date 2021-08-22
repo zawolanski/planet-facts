@@ -10,4 +10,8 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    body {
+        background: ${({ theme }) => theme.color.black} url('/assets/background-stars.svg');
+    }
+
 `;
