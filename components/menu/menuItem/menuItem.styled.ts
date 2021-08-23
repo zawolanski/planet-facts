@@ -33,9 +33,14 @@ export const ListItemLink = styled.a<Pick<IMenuItemsProps, 'color'>>`
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     font-size: 11px;
+    line-height: 1;
     letter-spacing: 1px;
-    padding: 11px 16px;
-    color: ${({ theme }) => hexRgb(theme.color.white, { format: 'css', alpha: 0.65 })};
+    padding: 18px 16px;
+    color: ${({ theme }) => hexRgb(theme.color.white, { format: 'css', alpha: 0.75 })};
+  }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    padding: 14.5px 16px;
   }
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpoint.tablet - 1}px) {

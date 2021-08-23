@@ -12,10 +12,19 @@ export const Container = styled.header`
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     flex-direction: column;
-    padding: 32px 24px 7px;
+    padding-top: 32px;
 
     .logo {
       margin-bottom: 28px;
+    }
+  }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    flex-direction: row;
+    padding: 22px 32px;
+
+    .logo {
+      margin-bottom: 0;
     }
   }
 `;
