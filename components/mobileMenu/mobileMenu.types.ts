@@ -10,3 +10,7 @@ export interface IMenuItemsProps {
   color: Planets;
   children: string;
 }
+
+export interface IMobileMenu {
+  isOpen: boolean;
+}

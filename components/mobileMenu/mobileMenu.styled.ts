@@ -1,14 +1,20 @@
 import hexRgb from 'hex-rgb';
 import link from 'next/link';
 import styled from 'styled-components';
-import { IMenuItemsProps } from './mobileMenu.types';
+import { IMenuItemsProps, IMobileMenu } from './mobileMenu.types';
 
-export const Navigation = styled.nav`
+export const Navigation = styled.nav<IMobileMenu>`
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
   padding: 4px 24px 0;
+  background-color: ${({ theme }) => theme.color.black};
+  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
+    display: none;
+  }
 `;
 
 export const ListItem = styled.li`
