@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { ListItemLink, ListItem } from './mobileMenu.styled';
-import { IMenuItemsProps } from './mobileMenu.types';
+import { ListItemLink, ListItem } from './menuItem.styled';
+import { IMenuItemsProps } from '../mobileMenu/mobileMenu.types';
 import { motion } from 'framer-motion';
 
 const item = {

@@ -1,4 +1,4 @@
-import { IPlanets } from './mobileMenu.types';
+import { IPlanets } from './mobileMenu/mobileMenu.types';
 
 export const planets: IPlanets[] = [
   {

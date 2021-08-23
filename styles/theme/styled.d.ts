@@ -3,8 +3,8 @@ import 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     breakpoint: {
-      tablet: string;
-      desktop: string;
+      tablet: number;
+      desktop: number;
     };
     color: {
       white: string;

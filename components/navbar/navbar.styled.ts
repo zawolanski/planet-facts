@@ -9,6 +9,15 @@ export const Container = styled.header`
   align-items: center;
   justify-content: space-between;
   position: relative;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    flex-direction: column;
+    padding: 32px 24px 7px;
+
+    .logo {
+      margin-bottom: 28px;
+    }
+  }
 `;
 
 export const MenuButton = styled.button`
@@ -16,7 +25,7 @@ export const MenuButton = styled.button`
   background: transparent;
   cursor: pointer;
 
-  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     display: none;
   }
 `;

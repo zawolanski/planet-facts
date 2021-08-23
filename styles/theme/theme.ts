@@ -2,8 +2,8 @@ import { DefaultTheme } from 'styled-components';
 
 export const theme: DefaultTheme = {
   breakpoint: {
-    tablet: '1024px',
-    desktop: '1200px',
+    tablet: 768,
+    desktop: 1100,
   },
   color: {
     white: '#FFFFFF',
