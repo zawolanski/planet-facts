@@ -1,6 +1,7 @@
 import { Container, MenuButton } from './navbar.styled';
 import Logo from '../../public/assets/logo.svg';
 import Menu from '../../public/assets/icons/menu.svg';
+import MobileMenu from 'components/mobileMenu';
 
 const Header = () => {
   return (
@@ -9,6 +10,7 @@ const Header = () => {
       <MenuButton>
         <Menu />
       </MenuButton>
+      <MobileMenu />
     </Container>
   );
 };

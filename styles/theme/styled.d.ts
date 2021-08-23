@@ -23,6 +23,16 @@ declare module 'styled-components' {
       green: string;
       orange: string;
       reddish: string;
+      planets: {
+        mercury: string;
+        venus: string;
+        earth: string;
+        mars: string;
+        jupiter: string;
+        saturn: string;
+        uranus: string;
+        neptune: string;
+      };
     };
     font: {
       antonio: string;

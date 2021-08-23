@@ -22,6 +22,16 @@ export const theme: DefaultTheme = {
     red: '#D83A34',
     green: '#1EC2A4',
     purple: '#6F2ED6',
+    planets: {
+      mercury: '#DEF4FC',
+      venus: '#F7CC7F',
+      earth: '#545BFE',
+      mars: '#FF6A45',
+      jupiter: '#ECAD7A',
+      saturn: '#FCCB6B',
+      uranus: '#65F0D5',
+      neptune: '#497EFA',
+    },
   },
   font: {
     antonio: "'Antonio', sans-serif",
