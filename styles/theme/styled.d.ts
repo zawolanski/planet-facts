@@ -2,6 +2,10 @@ import 'styled-components';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
+    breakpoint: {
+      tablet: string;
+      desktop: string;
+    };
     color: {
       white: string;
       black: string;
