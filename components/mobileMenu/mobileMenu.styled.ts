@@ -8,9 +8,9 @@ export const Navigation = styled.nav<IMobileMenu>`
   top: 100%;
   left: 0;
   width: 100%;
-  padding: 4px 24px 0;
-  background-color: ${({ theme }) => theme.color.black};
-  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+  padding-top: 4px;
+
+  /* display: ${({ isOpen }) => (isOpen ? 'block' : 'none')}; */
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}) {
     display: none;
@@ -30,7 +30,7 @@ export const ListItem = styled.li`
 export const ListItemLink = styled.a<Pick<IMenuItemsProps, 'color'>>`
   font-family: ${({ theme }) => theme.font.spartan};
   text-decoration: none;
-  padding: 20px 0;
+  padding: 20px 24px;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 15px;
@@ -40,6 +40,7 @@ export const ListItemLink = styled.a<Pick<IMenuItemsProps, 'color'>>`
   align-items: center;
   position: relative;
   color: ${({ theme }) => theme.color.white};
+  background-color: ${({ theme }) => theme.color.black};
 
   ::before {
     content: '';
@@ -58,7 +59,7 @@ export const ListItemLink = styled.a<Pick<IMenuItemsProps, 'color'>>`
     position: absolute;
     width: 5px;
     height: 10px;
-    right: 8px;
+    right: 32px;
     background: url('/assets/icons/chevron-right.svg') no-repeat;
     background-size: cover;
   }
