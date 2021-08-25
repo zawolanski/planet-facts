@@ -6,7 +6,7 @@ const DesktopMenu = () => (
   <Navigation>
     <List>
       {planets.map(({ id, planet }) => (
-        <MenuItem key={id} href={`/${planet}`} color={planet}>
+        <MenuItem key={id} href={`/${planet}/overview`} color={planet}>
           {planet}
         </MenuItem>
       ))}

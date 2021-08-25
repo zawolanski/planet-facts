@@ -12,7 +12,7 @@ const MobileMenu = ({ isOpen }: IMobileMenu) => (
       <Navigation as={motion.nav} variants={container} initial="hidden" animate="show" exit="exit">
         <motion.ul>
           {planets.map(({ id, planet }) => (
-            <MenuItem key={id} href={`/${planet}`} color={planet}>
+            <MenuItem key={id} href={`/${planet}/overview`} color={planet}>
               {planet}
             </MenuItem>
           ))}
