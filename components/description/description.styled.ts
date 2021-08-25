@@ -88,8 +88,23 @@ export const Button = styled.a<IStyledButtonProps>`
   }
 `;
 
+export const ImgContainer = styled.div`
+  width: 100%;
+  height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const ImgWrapper = styled.div`
   width: 300px;
   height: 300px;
-  margin: 0 auto;
+  position: relative;
+
+  .img {
+    width: auto !important;
+    height: auto !important;
+    min-height: auto !important;
+    min-width: auto !important;
+  }
 `;

@@ -8,6 +8,7 @@ import {
   Wikipedia,
   Button,
   ImgWrapper,
+  ImgContainer,
 } from './description.styled';
 import Image from 'next/image';
 import { IDescriptionProps } from './description.types';
@@ -17,17 +18,34 @@ const Description = ({ name, overview, structure, surface, image }: IDescription
 
   return (
     <Container>
-      <ImgWrapper>
-        {image.overview !== undefined ? (
-          <Image width="300" height="300" src={image.overview.url} alt={`The image of ${name}`} />
-        ) : null}
-        {image.structure !== undefined ? (
-          <Image width="300" height="300" src={image.structure.url} alt={`The image of ${name}`} />
-        ) : null}
-        {image.surface !== undefined ? (
-          <Image width="300" height="300" src={image.surface.url} alt={`The image of ${name}`} />
-        ) : null}
-      </ImgWrapper>
+      <ImgContainer>
+        <ImgWrapper>
+          {image.overview !== undefined ? (
+            <Image
+              layout="fill"
+              src={image.overview.url}
+              alt={`The image of ${name}`}
+              className="img"
+            />
+          ) : null}
+          {image.structure !== undefined ? (
+            <Image
+              layout="fill"
+              src={image.structure.url}
+              alt={`The image of ${name}`}
+              className="img"
+            />
+          ) : null}
+          {image.surface !== undefined ? (
+            <Image
+              layout="fill"
+              src={image.surface.url}
+              alt={`The image of ${name}`}
+              className="img"
+            />
+          ) : null}
+        </ImgWrapper>
+      </ImgContainer>
       <div>
         <Title>{name}</Title>
         {structure !== undefined ? (
