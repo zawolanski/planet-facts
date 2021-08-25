@@ -1,11 +1,9 @@
 import styled from 'styled-components';
-import hexRgb from 'hex-rgb';
 import { IMenuItemsProps } from '../mobileMenu/mobileMenu.types';
 
 export const ListItem = styled.li`
   list-style: none;
-  border-bottom: 1px solid
-    ${({ theme }) => hexRgb(theme.color.white, { format: 'css', alpha: 0.1 })};
+  border-bottom: 1px solid ${({ theme }) => theme.color.white__02};
 
   :last-of-type {
     border: 0;
@@ -36,7 +34,7 @@ export const ListItemLink = styled.a<Pick<IMenuItemsProps, 'color'>>`
     line-height: 1;
     letter-spacing: 1px;
     padding: 18px 16px;
-    color: ${({ theme }) => hexRgb(theme.color.white, { format: 'css', alpha: 0.75 })};
+    color: ${({ theme }) => theme.color.white__075};
   }
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {

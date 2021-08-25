@@ -1,12 +1,22 @@
+import Information from 'components/information';
 import { gql, GraphQLClient } from 'graphql-request';
 import { getPlanet, planets } from 'graphql/planet';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { IParams } from 'types/pages/planet';
+import { IParams, IPlanet } from 'types/pages/planet';
 
 const client = new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHCMS_URL as string);
 
-const Planet = (props: any) => {
-  return <div>TEST</div>;
+const Planet = ({ planet: { temperature, revolution, radius, rotation } }: { planet: IPlanet }) => {
+  return (
+    <>
+      <Information
+        radius={radius}
+        temperature={temperature}
+        revolution={revolution}
+        rotation={rotation}
+      />
+    </>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -20,7 +30,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   });
 
   return {
-    props: { planet: { ...data.planets } },
+    props: { planet: data.planets[0] },
   };
 };
 

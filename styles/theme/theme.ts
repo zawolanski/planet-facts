@@ -1,3 +1,4 @@
+import hexRgb from 'hex-rgb';
 import { DefaultTheme } from 'styled-components';
 
 export const theme: DefaultTheme = {
@@ -7,6 +8,9 @@ export const theme: DefaultTheme = {
   },
   color: {
     white: '#FFFFFF',
+    white__075: hexRgb('#FFFFFF', { format: 'css', alpha: 0.75 }),
+    white__05: hexRgb('#FFFFFF', { format: 'css', alpha: 0.5 }),
+    white__02: hexRgb('#FFFFFF', { format: 'css', alpha: 0.2 }),
     black: '#070724',
     grey: {
       normal: '#838391',
