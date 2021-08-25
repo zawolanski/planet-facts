@@ -15,11 +15,11 @@ const Information = ({ radius, revolution, rotation, temperature }: IInformation
         </CardValue>
       </Card>
       <Card>
-        <CardTitle>radius time</CardTitle>
+        <CardTitle>radius</CardTitle>
         <CardValue>{radius} km</CardValue>
       </Card>
       <Card>
-        <CardTitle>average temp. time</CardTitle>
+        <CardTitle>average temp.</CardTitle>
         <CardValue>{temperature} °C</CardValue>
       </Card>
     </Container>
