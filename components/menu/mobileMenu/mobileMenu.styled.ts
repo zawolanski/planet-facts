@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Navigation = styled.nav`
+  z-index: 15;
   position: absolute;
   top: 100%;
   left: 0;
