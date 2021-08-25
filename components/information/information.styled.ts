@@ -5,29 +5,32 @@ export const Container = styled.div`
   padding: 0 24px 24px;
   width: 100%;
   max-width: 1100px;
+  margin: 0 auto;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    display: flex;
+  }
 `;
 
 export const Card = styled.div`
   border: 1px solid ${({ theme }) => theme.color.white__02};
   margin-bottom: 8px;
-  height: 48px;
+  min-height: 48px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
 
-  :nth-of-type(1) > p:last-of-type::after,
-  :nth-of-type(2) > p:last-of-type::after {
-    content: ' days';
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin: 0 11px 0 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
   }
 
-  :nth-of-type(3) > p:last-of-type::after {
-    content: ' km';
-  }
-
-  :nth-of-type(4) > p:last-of-type::after {
-    content: '°C';
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    padding: 20px;
   }
 `;
 
@@ -38,6 +41,15 @@ export const CardTitle = styled.p`
   font-size: 8px;
   font-weight: 700;
   letter-spacing: 0.75px;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin-bottom: 10px;
+  }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    font-size: 11px;
+    margin-bottom: 15px;
+  }
 `;
 
 export const CardValue = styled.p`
@@ -46,5 +58,12 @@ export const CardValue = styled.p`
   color: ${({ theme }) => theme.color.white};
   font-size: 20px;
   letter-spacing: -0.75px;
-  height: 22px;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: 24px;
+  }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    font-size: 40px;
+  }
 `;

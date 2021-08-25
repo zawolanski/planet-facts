@@ -6,19 +6,21 @@ const Information = ({ radius, revolution, rotation, temperature }: IInformation
     <Container>
       <Card>
         <CardTitle>rotation time</CardTitle>
-        <CardValue>{rotation}</CardValue>
+        <CardValue>{rotation} days</CardValue>
       </Card>
       <Card>
         <CardTitle>revolution time</CardTitle>
-        <CardValue>{revolution}</CardValue>
+        <CardValue>
+          {revolution > 1000 ? `${(revolution / 365).toFixed(2)} years` : `${revolution} days`}
+        </CardValue>
       </Card>
       <Card>
         <CardTitle>radius time</CardTitle>
-        <CardValue>{radius}</CardValue>
+        <CardValue>{radius} km</CardValue>
       </Card>
       <Card>
         <CardTitle>average temp. time</CardTitle>
-        <CardValue>{temperature}</CardValue>
+        <CardValue>{temperature} °C</CardValue>
       </Card>
     </Container>
   );
