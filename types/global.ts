@@ -7,3 +7,5 @@ export type Planets =
   | 'saturn'
   | 'uranus'
   | 'neptune';
+
+export type PageType = 'overview' | 'surface' | 'structure';
