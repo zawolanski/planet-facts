@@ -3,19 +3,16 @@ import { IMenuItemsProps } from '../mobileMenu/mobileMenu.types';
 
 export const ListItem = styled.li`
   list-style: none;
-  border-bottom: 1px solid ${({ theme }) => theme.color.white__02};
 
-  :last-of-type {
-    border: 0;
-  }
-
-  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+  :last-of-type a {
     border: 0;
   }
 `;
 
 export const ListItemLink = styled.a<Pick<IMenuItemsProps, 'color'>>`
   font-family: ${({ theme }) => theme.font.spartan};
+
+  border-bottom: 1px solid ${({ theme }) => theme.color.white__02};
   text-decoration: none;
   padding: 20px 24px;
   text-transform: uppercase;
@@ -35,6 +32,7 @@ export const ListItemLink = styled.a<Pick<IMenuItemsProps, 'color'>>`
     letter-spacing: 1px;
     padding: 18px 16px;
     color: ${({ theme }) => theme.color.white__075};
+    border: 0;
   }
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
