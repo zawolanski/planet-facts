@@ -48,9 +48,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const data = await client.request(planets);
 
   const paths = (data.planets as { name: string }[]).map(({ name }) => [
-    { params: { planet: name.toLowerCase(), type: 'overview' } },
-    { params: { planet: name.toLowerCase(), type: 'structure' } },
-    { params: { planet: name.toLowerCase(), type: 'surface' } },
+    { params: { planet: name, type: 'overview' } },
+    { params: { planet: name, type: 'structure' } },
+    { params: { planet: name, type: 'surface' } },
   ]);
 
   return {

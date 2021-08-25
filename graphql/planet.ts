@@ -2,7 +2,7 @@ import { gql } from 'graphql-request';
 import { PageType } from 'types/global';
 
 export const getPlanet = (type: PageType) => gql`
-query Planets($planet: String!) {
+query Planet($planet: String!) {
   planets(where: { name: $planet }) {
     name
     rotation
@@ -10,7 +10,13 @@ query Planets($planet: String!) {
     radius
     temperature
     image {
-      ${type} {
+      structure {
+        url
+      }
+      overview {
+        url
+      }
+      surface {
         url
       }
     }

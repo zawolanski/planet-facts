@@ -9,40 +9,33 @@ import {
   Button,
   ImgWrapper,
   ImgContainer,
+  Surface,
 } from './description.styled';
 import Image from 'next/image';
 import { IDescriptionProps } from './description.types';
 
 const Description = ({ name, overview, structure, surface, image }: IDescriptionProps) => {
-  const { asPath } = useRouter();
+  const { asPath, query } = useRouter();
 
   return (
     <Container>
       <ImgContainer>
         <ImgWrapper>
-          {image.overview !== undefined ? (
-            <Image
-              layout="fill"
-              src={image.overview.url}
-              alt={`The image of ${name}`}
-              className="img"
-            />
-          ) : null}
-          {image.structure !== undefined ? (
-            <Image
-              layout="fill"
-              src={image.structure.url}
-              alt={`The image of ${name}`}
-              className="img"
-            />
-          ) : null}
-          {image.surface !== undefined ? (
-            <Image
-              layout="fill"
-              src={image.surface.url}
-              alt={`The image of ${name}`}
-              className="img"
-            />
+          <Image
+            layout="fill"
+            src={query.type === 'structure' ? image.structure.url : image.overview.url}
+            alt=""
+            className="img"
+          />
+          {query.type === 'surface' ? (
+            <Surface>
+              <Image
+                layout="fill"
+                src={image.surface.url}
+                alt={`The surface of ${name}`}
+                className="img"
+              />
+            </Surface>
           ) : null}
         </ImgWrapper>
       </ImgContainer>

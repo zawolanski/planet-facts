@@ -100,6 +100,9 @@ export const ImgWrapper = styled.div`
   width: 300px;
   height: 300px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .img {
     width: auto !important;
@@ -107,4 +110,14 @@ export const ImgWrapper = styled.div`
     min-height: auto !important;
     min-width: auto !important;
   }
+`;
+
+export const Surface = styled.section`
+  position: absolute !important;
+  z-index: 3;
+  height: 100px !important;
+  width: 82px;
+  top: 55%;
+  left: 50%;
+  transform: translateX(-50%);
 `;

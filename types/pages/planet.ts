@@ -12,13 +12,13 @@ export interface IPlanet {
   radius: number;
   temperature: number;
   image: {
-    structure?: {
+    structure: {
       url: string;
     };
-    surface?: {
+    surface: {
       url: string;
     };
-    overview?: {
+    overview: {
       url: string;
     };
   };

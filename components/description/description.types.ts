@@ -15,13 +15,13 @@ export interface IDescriptionProps {
     source: string;
   };
   image: {
-    structure?: {
+    structure: {
       url: string;
     };
-    surface?: {
+    surface: {
       url: string;
     };
-    overview?: {
+    overview: {
       url: string;
     };
   };
