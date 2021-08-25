@@ -1,19 +1,42 @@
-import { useRouter } from 'next/dist/client/router';
 import { gql, GraphQLClient } from 'graphql-request';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 const client = new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHCMS_URL as string);
 
-const Planet = () => {
-  const router = useRouter();
-  console.log(router.query.slug);
-
+const Planet = (props: any) => {
+  console.log(props);
   return <div>TEST</div>;
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const param = params as { planet: string; type: 'overview' | 'surface' | 'structure' };
+  const planet = `${param.planet[0].toUpperCase()}${param.planet.slice(1)}`;
+  const query = gql`
+    query Planets($planet: String!) {
+      planets(where: { name: $planet }) {
+        name
+        rotation
+        revolution
+        radius
+        temperature
+        image {
+          ${param.type} {
+            url
+          }
+        }
+        ${param.type} {
+          content
+          source
+        }
+      }
+    }
+  `;
+
+  const data = await client.request(query, { planet });
+  console.log(data.planets);
+
   return {
-    props: {},
+    props: { planet: { ...data.planets } },
   };
 };
 
