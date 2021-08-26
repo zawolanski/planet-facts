@@ -16,11 +16,11 @@ const Information = ({ radius, revolution, rotation, temperature }: IInformation
       </Card>
       <Card>
         <CardTitle>radius</CardTitle>
-        <CardValue>{radius} km</CardValue>
+        <CardValue>{radius.toLocaleString('en-US')} km</CardValue>
       </Card>
       <Card>
         <CardTitle>average temp.</CardTitle>
-        <CardValue>{temperature} °C</CardValue>
+        <CardValue>{temperature}°C</CardValue>
       </Card>
     </Container>
   );

@@ -16,12 +16,7 @@ const Images = ({ image, name }: IImageProps) => {
         />
         {query.type === 'surface' ? (
           <Surface>
-            <Image
-              layout="fill"
-              src={image.surface.url}
-              alt={`The surface of ${name}`}
-              className="img"
-            />
+            <Image layout="fill" src={image.surface.url} alt={`The surface of ${name}`} />
           </Surface>
         ) : null}
       </ImgWrapper>

@@ -40,8 +40,8 @@ export const ImgWrapper = styled.div`
 export const Surface = styled.section`
   position: absolute !important;
   z-index: 3;
-  height: 100px !important;
-  width: 82px;
+  height: 125px !important;
+  width: 101px;
   top: 55%;
   left: 50%;
   transform: translateX(-50%);
