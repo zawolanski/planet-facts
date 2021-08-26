@@ -5,6 +5,29 @@ export interface IParams {
   type: PageType;
 }
 
+export interface IContent {
+  name: Planets;
+  rotation: number;
+  revolution: number;
+  radius: number;
+  temperature: number;
+  image: {
+    structure: {
+      url: string;
+    };
+    surface: {
+      url: string;
+    };
+    overview: {
+      url: string;
+    };
+  };
+  text: {
+    content: string;
+    source: string;
+  };
+}
+
 export interface IPlanet {
   name: Planets;
   rotation: number;

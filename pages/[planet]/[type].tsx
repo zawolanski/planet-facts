@@ -1,18 +1,17 @@
 import Description from 'components/description';
 import Information from 'components/information';
-import { gql, GraphQLClient } from 'graphql-request';
+import { GraphQLClient } from 'graphql-request';
 import { getPlanet, planets } from 'graphql/planet';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Link from 'next/link';
-import Image from 'next/image';
-import { IParams, IPlanet } from 'types/pages/planet';
+import { IContent, IParams, IPlanet } from 'types/pages/planet';
+import { omit } from 'lodash';
 
 const client = new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHCMS_URL as string);
 
 const Planet = ({
   planet: { temperature, revolution, radius, rotation, name, ...props },
 }: {
-  planet: IPlanet;
+  planet: IContent;
 }) => {
   return (
     <>
@@ -33,14 +32,34 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const routeParams = params as IParams | undefined;
 
   if (routeParams === undefined) return { notFound: true };
-  const { type, planet } = routeParams;
+  const { type, planet: planetName } = routeParams;
 
-  const data = await client.request(getPlanet(type), {
-    planet: planet,
+  const data: { planets: IPlanet[] } = await client.request(getPlanet(type), {
+    planet: planetName,
   });
 
+  const planet = data.planets[0];
+
+  if (planet === undefined) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const planetData: IContent = {
+    ...omit(planet, ['overview', 'structure', 'surface']),
+    text: {
+      source: '',
+      content: '',
+    },
+  };
+
+  if (planet.overview !== undefined) planetData.text = planet.overview;
+  if (planet.surface !== undefined) planetData.text = planet.surface;
+  if (planet.structure !== undefined) planetData.text = planet.structure;
+
   return {
-    props: { planet: data.planets[0] },
+    props: { planet: planetData },
   };
 };
 

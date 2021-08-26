@@ -1,19 +1,7 @@
 import { Planets } from 'types/global';
 
-export interface IDescriptionProps {
+export interface IImageProps {
   name: Planets;
-  structure?: {
-    content: string;
-    source: string;
-  };
-  surface?: {
-    content: string;
-    source: string;
-  };
-  overview?: {
-    content: string;
-    source: string;
-  };
   image: {
     structure: {
       url: string;
@@ -24,6 +12,13 @@ export interface IDescriptionProps {
     overview: {
       url: string;
     };
+  };
+}
+
+export interface IDescriptionProps extends IImageProps {
+  text: {
+    content: string;
+    source: string;
   };
 }
 
