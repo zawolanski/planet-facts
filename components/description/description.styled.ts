@@ -3,16 +3,22 @@ import { IStyledButtonProps } from './description.types';
 
 export const Container = styled.div`
   width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
   padding: 0 24px 24px;
   color: ${({ theme }) => theme.color.white};
   position: relative;
   padding-top: 50px;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    padding: 0 40px 40px;
+  }
 `;
 
 export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    display: flex;
+  }
 `;
 
 export const Title = styled.h1`
@@ -22,6 +28,11 @@ export const Title = styled.h1`
   margin-bottom: 10px;
   text-align: center;
   text-transform: uppercase;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    text-align: left;
+    margin-bottom: 30px;
+  }
 `;
 
 export const Paragraph = styled.p`
@@ -30,6 +41,11 @@ export const Paragraph = styled.p`
   line-height: 22px;
   margin-bottom: 32px;
   text-align: center;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    text-align: left;
+    margin-bottom: 44px;
+  }
 `;
 
 export const Wikipedia = styled.p`
@@ -56,6 +72,11 @@ export const Wikipedia = styled.p`
     height: 15px;
     margin-left: 5px;
   }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    text-align: left;
+    justify-content: flex-start;
+  }
 `;
 
 export const Buttons = styled.div`
@@ -67,6 +88,15 @@ export const Buttons = styled.div`
   width: 100%;
   height: 50px;
   border-bottom: 1px solid ${({ theme }) => theme.color.white__02};
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    position: static;
+    border: 0;
+    margin-left: 70px;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+  }
 `;
 
 export const Button = styled.a<IStyledButtonProps>`
@@ -86,38 +116,37 @@ export const Button = styled.a<IStyledButtonProps>`
   :last-of-type {
     margin: 0;
   }
-`;
 
-export const ImgContainer = styled.div`
-  width: 100%;
-  height: 330px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    width: 280px;
+    height: 40px;
+    border: 1px solid
+      ${({ theme, name, isActive }) =>
+        isActive ? theme.color.planets[name] : theme.color.white__02};
+    margin: 0;
+    margin-bottom: 16px;
+    color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme, name, isActive }) =>
+      isActive ? theme.color.planets[name] : 'transparent'};
+    transition: background-color 0.2s;
 
-export const ImgWrapper = styled.div`
-  width: 300px;
-  height: 300px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    :hover {
+      background-color: ${({ theme, name, isActive }) =>
+        isActive ? theme.color.planets[name] : theme.color.action.hover};
+    }
 
-  .img {
-    width: auto !important;
-    height: auto !important;
-    min-height: auto !important;
-    min-width: auto !important;
+    ::before {
+      content: '01';
+      margin: 0 16px 0 20px;
+      color: ${({ theme }) => theme.color.white__05};
+    }
+
+    :nth-of-type(2)::before {
+      content: '02';
+    }
+
+    :nth-of-type(3)::before {
+      content: '03';
+    }
   }
-`;
-
-export const Surface = styled.section`
-  position: absolute !important;
-  z-index: 3;
-  height: 100px !important;
-  width: 82px;
-  top: 55%;
-  left: 50%;
-  transform: translateX(-50%);
 `;

@@ -20,6 +20,9 @@ declare module 'styled-components' {
         normal: string;
         light: string;
       };
+      action: {
+        hover: string;
+      };
       yellow: string;
       purple: string;
       red: string;

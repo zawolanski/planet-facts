@@ -1,7 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
-import { ImgContainer, ImgWrapper, Surface } from './description.styled';
-import { IImageProps } from './description.types';
+import { ImgContainer, ImgWrapper, Surface } from './image.styled';
+import { IImageProps } from '../description/description.types';
 const Images = ({ image, name }: IImageProps) => {
   const { query } = useRouter();
 

@@ -9,6 +9,7 @@ export const Container = styled.div`
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     display: flex;
+    padding: 0 40px 36px;
   }
 `;
 
@@ -27,6 +28,10 @@ export const Card = styled.div`
     flex-direction: column;
     align-items: flex-start;
     padding: 15px;
+
+    :last-of-type {
+      margin-right: 0;
+    }
   }
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
