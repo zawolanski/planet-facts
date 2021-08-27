@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { IStyledImgWrapperProps } from './image.types';
 
 export const ImgContainer = styled.div`
   width: 100%;
@@ -10,30 +11,29 @@ export const ImgContainer = styled.div`
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     height: 420px;
   }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    height: auto;
+    width: 760px;
+  }
 `;
 
-export const ImgWrapper = styled.div`
-  width: 300px;
-  height: 300px;
+export const ImgWrapper = styled.div<IStyledImgWrapperProps>`
+  width: ${({ sizes, name }) => `${sizes[name].mobile}px`};
+  height: ${({ sizes, name }) => `${sizes[name].mobile}px`};
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  .img {
-    width: auto !important;
-    height: auto !important;
-    min-height: auto !important;
-    min-width: auto !important;
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    width: ${({ sizes, name }) => `${sizes[name].tablet}px`};
+    height: ${({ sizes, name }) => `${sizes[name].tablet}px`};
   }
 
-  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    width: 400px;
-    height: 400px;
-
-    .img {
-      transform: scale(1.5);
-    }
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    width: ${({ sizes, name }) => `${sizes[name].desktop}px`};
+    height: ${({ sizes, name }) => `${sizes[name].desktop}px`};
   }
 `;
 

@@ -2,17 +2,17 @@ import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import { ImgContainer, ImgWrapper, Surface } from './image.styled';
 import { IImageProps } from '../description/description.types';
+import { sizes } from './image.sizes';
 const Images = ({ image, name }: IImageProps) => {
   const { query } = useRouter();
 
   return (
     <ImgContainer>
-      <ImgWrapper>
+      <ImgWrapper sizes={sizes} name={name}>
         <Image
           layout="fill"
           src={query.type === 'structure' ? image.structure.url : image.overview.url}
           alt=""
-          className="img"
         />
         {query.type === 'surface' ? (
           <Surface>
