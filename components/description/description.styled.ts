@@ -3,7 +3,7 @@ import { IStyledButtonProps } from './description.types';
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 1100px;
+  max-width: 1190px;
   margin: 0 auto;
   padding: 0 24px 24px;
   color: ${({ theme }) => theme.color.white};
@@ -13,11 +13,21 @@ export const Container = styled.div`
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     padding: 0 40px 40px;
   }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    display: flex;
+  }
 `;
 
 export const Content = styled.div`
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     display: flex;
+  }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    width: 350px;
+    flex-direction: column;
+    justify-content: center;
   }
 `;
 
@@ -33,6 +43,11 @@ export const Title = styled.h1`
     text-align: left;
     margin-bottom: 30px;
   }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    font-size: 80px;
+    line-height: 115px;
+  }
 `;
 
 export const Paragraph = styled.p`
@@ -45,6 +60,11 @@ export const Paragraph = styled.p`
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     text-align: left;
     margin-bottom: 44px;
+  }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    font-size: 14px;
+    line-height: 25px;
   }
 `;
 
@@ -77,6 +97,11 @@ export const Wikipedia = styled.p`
     text-align: left;
     justify-content: flex-start;
   }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    font-size: 14px;
+    margin-bottom: 38px;
+  }
 `;
 
 export const Buttons = styled.div`
@@ -96,6 +121,10 @@ export const Buttons = styled.div`
     flex-direction: column;
     height: auto;
     width: auto;
+  }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    margin-left: 0;
   }
 `;
 
@@ -148,5 +177,9 @@ export const Button = styled.a<IStyledButtonProps>`
     :nth-of-type(3)::before {
       content: '03';
     }
+  }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    width: 350px;
   }
 `;

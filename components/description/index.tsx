@@ -9,7 +9,6 @@ import {
   Button,
   Content,
 } from './description.styled';
-import Image from 'next/image';
 import { IDescriptionProps } from './description.types';
 import Images from 'components/image';
 

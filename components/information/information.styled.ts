@@ -4,7 +4,7 @@ export const Container = styled.div`
   color: ${({ theme }) => theme.color.white};
   padding: 0 24px 24px;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1190px;
   margin: 0 auto;
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
@@ -35,7 +35,8 @@ export const Card = styled.div`
   }
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
-    padding: 20px;
+    padding: 25px;
+    margin-right: 30px;
   }
 `;
 
@@ -53,7 +54,7 @@ export const CardTitle = styled.p`
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
     font-size: 11px;
-    margin-bottom: 15px;
+    margin-bottom: 22px;
   }
 `;
 

@@ -3,18 +3,18 @@ import { IStyledImgWrapperProps } from './image.types';
 
 export const ImgContainer = styled.div`
   width: 100%;
-  height: 330px;
+  min-height: 330px;
   display: flex;
   align-items: center;
   justify-content: center;
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    height: 450px;
+    min-height: 450px;
   }
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
-    height: auto;
-    width: 760px;
+    min-height: 670px;
+    margin-right: 90px;
   }
 `;
 
