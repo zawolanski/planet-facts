@@ -10,7 +10,7 @@
 
 ## Links 
 
-- link to [demo](https://tip-calculator-livid.vercel.app/)
+- link to [demo](https://planet-facts-five.vercel.app/)
 
 ## Built with
 
