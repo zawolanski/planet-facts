@@ -8,7 +8,7 @@ const Images = ({ image, name }: IImageProps) => {
 
   return (
     <ImgContainer>
-      <ImgWrapper sizes={sizes} name={name}>
+      <ImgWrapper $sizes={sizes} $name={name}>
         <Image
           layout="fill"
           src={query.type === 'structure' ? image.structure.url : image.overview.url}
