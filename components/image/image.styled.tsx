@@ -38,11 +38,17 @@ export const ImgWrapper = styled.div<IStyledImgWrapperProps>`
 `;
 
 export const Surface = styled.section`
-  position: absolute !important;
+  position: absolute;
   z-index: 3;
-  height: 125px !important;
+  height: 125px;
   width: 101px;
   top: 55%;
   left: 50%;
   transform: translateX(-50%);
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    height: 199px;
+    width: 163px;
+    top: 60%;
+  }
 `;
