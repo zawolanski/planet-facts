@@ -18,6 +18,7 @@ const Planet = ({
     <>
     <Head>
       <title>THE PLANETS - {upperFirst(name)}</title>
+      <link rel="shortcut icon" href={`/assets/ico/${name}.ico`} />
     </Head>
       <Description name={name} {...props} />
       <Information
