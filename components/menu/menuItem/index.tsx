@@ -10,11 +10,10 @@ const item = {
 };
 
 const MenuItem = ({ children, href, color }: IMenuItemsProps) => (
-  <ListItem as={motion.li} variants={item}>
+  <ListItem as={motion.li} variants={item} planet={color}>
     <Link href={href} passHref>
-      <ListItemLink color={color}>{children}</ListItemLink>
+      <ListItemLink planet={color}>{children}</ListItemLink>
     </Link>
   </ListItem>
 );
-
 export default MenuItem;

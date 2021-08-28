@@ -14,3 +14,7 @@ export interface IMenuItemsProps {
 export interface IMobileMenu {
   isOpen: boolean;
 }
+
+export interface IStyledMenuItemProps {
+  planet: Planets;
+}

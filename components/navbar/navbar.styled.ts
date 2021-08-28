@@ -12,6 +12,7 @@ const Container = styled.header`
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     flex-direction: column;
     padding-top: 32px;
+    padding-bottom: 0;
 
     .logo {
       margin-bottom: 28px;
@@ -20,7 +21,7 @@ const Container = styled.header`
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
     flex-direction: row;
-    padding: 22px 32px;
+    padding: 0 32px;
 
     .logo {
       margin-bottom: 0;
@@ -34,7 +35,7 @@ const MenuButton = styled.button<IMenuButtonProps>`
   cursor: pointer;
 
   > svg * {
-    fill: ${({theme, isMenuOpen}) => isMenuOpen && theme.color.white__02};
+    fill: ${({ theme, isMenuOpen }) => isMenuOpen && theme.color.white__02};
   }
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
@@ -44,7 +45,7 @@ const MenuButton = styled.button<IMenuButtonProps>`
 
 const Styled = {
   Container,
-  MenuButton
-}
+  MenuButton,
+};
 
 export default Styled;

@@ -122,6 +122,20 @@ export const Buttons = styled.div`
     flex-direction: column;
     height: auto;
     width: auto;
+
+    div a::before {
+      content: '01';
+      margin: 0 16px 0 20px;
+      color: ${({ theme }) => theme.color.white__05};
+    }
+
+    div:nth-of-type(2) a::before {
+      content: '02';
+    }
+
+    div:nth-of-type(3) a::before {
+      content: '03';
+    }
   }
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.desktop}px) {
@@ -182,20 +196,6 @@ export const Button = styled.a<IStyledButtonProps>`
     :hover {
       background-color: ${({ theme, name, isActive }) =>
         isActive ? theme.color.planets[name] : theme.color.action.hover};
-    }
-
-    ::before {
-      content: '01';
-      margin: 0 16px 0 20px;
-      color: ${({ theme }) => theme.color.white__05};
-    }
-
-    :nth-of-type(2)::before {
-      content: '02';
-    }
-
-    :nth-of-type(3)::before {
-      content: '03';
     }
   }
 
