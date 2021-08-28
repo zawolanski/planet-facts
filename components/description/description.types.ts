@@ -26,3 +26,7 @@ export interface IStyledButtonProps {
   name: Planets;
   isActive: boolean;
 }
+
+export interface IStyledUnderlineProps {
+  name: Planets;
+}

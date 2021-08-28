@@ -1,5 +1,6 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { IStyledButtonProps } from './description.types';
+import { IStyledButtonProps, IStyledUnderlineProps } from './description.types';
 
 export const Container = styled.section`
   width: 100%;
@@ -128,23 +129,44 @@ export const Buttons = styled.div`
   }
 `;
 
+export const Underline = styled(motion.div)<IStyledUnderlineProps>`
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: ${({ theme, name }) => theme.color.planets[name]};
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    display: none;
+  }
+`;
+
+export const ButtonWrapper = styled.div`
+  margin-right: 40px;
+  position: relative;
+
+  :last-of-type {
+    margin: 0;
+  }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin: 0;
+    margin-bottom: 16px;
+  }
+`;
+
 export const Button = styled.a<IStyledButtonProps>`
   font-family: ${({ theme }) => theme.font.spartan};
   color: ${({ theme }) => theme.color.white__05};
   text-transform: uppercase;
-  margin-right: 40px;
   letter-spacing: 2px;
   font-size: 9px;
   text-decoration: none;
   display: flex;
   align-items: center;
   height: 100%;
-  border-bottom: 4px solid
-    ${({ theme, name, isActive }) => (isActive ? theme.color.planets[name] : 'transparent')};
-
-  :last-of-type {
-    margin: 0;
-  }
+  position: relative;
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     width: 280px;
@@ -152,8 +174,6 @@ export const Button = styled.a<IStyledButtonProps>`
     border: 1px solid
       ${({ theme, name, isActive }) =>
         isActive ? theme.color.planets[name] : theme.color.white__02};
-    margin: 0;
-    margin-bottom: 16px;
     color: ${({ theme }) => theme.color.white};
     background-color: ${({ theme, name, isActive }) =>
       isActive ? theme.color.planets[name] : 'transparent'};

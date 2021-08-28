@@ -8,14 +8,20 @@ import {
   Wikipedia,
   Button,
   Content,
+  Underline,
+  ButtonWrapper,
 } from './description.styled';
 import { IDescriptionProps } from './description.types';
 import Images from 'components/image';
+import { AnimateSharedLayout, motion } from 'framer-motion';
+import { useWindowSize } from 'react-use';
+import { theme } from 'styles/theme/theme';
 
 const TYPES = ['overview', 'structure', 'surface'];
 
 const Description = ({ name, text, image }: IDescriptionProps) => {
   const { asPath } = useRouter();
+  const { width } = useWindowSize();
 
   return (
     <Container>
@@ -34,13 +40,22 @@ const Description = ({ name, text, image }: IDescriptionProps) => {
           </div>
         </div>
         <Buttons>
-          {TYPES.map((type) => (
-            <Link href={`/${name}/${type}`} key={type} passHref>
-              <Button name={name} isActive={asPath === `/${name}/${type}`}>
-                {type}
-              </Button>
-            </Link>
-          ))}
+          <AnimateSharedLayout>
+            {TYPES.map((type) => (
+              <ButtonWrapper key={type}>
+                <Link href={`/${name}/${type}`} passHref>
+                  <Button as={motion.a} name={name} isActive={asPath === `/${name}/${type}`}>
+                    {width >= theme.breakpoint.tablet && type === 'structure' && 'internal '}
+                    {type}
+                    {width >= theme.breakpoint.tablet && type === 'surface' && ' geology'}
+                  </Button>
+                </Link>
+                {asPath === `/${name}/${type}` && (
+                  <Underline name={name} initial={false} layoutId="underline" />
+                )}
+              </ButtonWrapper>
+            ))}
+          </AnimateSharedLayout>
         </Buttons>
       </Content>
     </Container>
