@@ -1,5 +1,3 @@
-### !!! It's not finished yet !!!
-
 # Planet facts
 
 ## Table of contents
