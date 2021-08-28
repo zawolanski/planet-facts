@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.section`
   color: ${({ theme }) => theme.color.white};
   padding: 0 24px 24px;
   width: 100%;

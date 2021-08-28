@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { IMenuButtonProps } from './navbar.types';
 
-export const Container = styled.header`
+const Container = styled.header`
   padding: 16px 24px;
   border-bottom: 1px solid ${({ theme }) => theme.color.white__02};
   display: flex;
@@ -27,12 +28,23 @@ export const Container = styled.header`
   }
 `;
 
-export const MenuButton = styled.button`
+const MenuButton = styled.button<IMenuButtonProps>`
   border: 0;
   background: transparent;
   cursor: pointer;
+
+  > svg * {
+    fill: ${({theme, isMenuOpen}) => isMenuOpen && theme.color.white__02};
+  }
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     display: none;
   }
 `;
+
+const Styled = {
+  Container,
+  MenuButton
+}
+
+export default Styled;

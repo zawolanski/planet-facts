@@ -1,24 +1,30 @@
-import { Container, MenuButton } from './navbar.styled';
+import Styled from './navbar.styled';
 import Logo from '../../public/assets/logo.svg';
 import Menu from '../../public/assets/icons/menu.svg';
 import MobileMenu from 'components/menu/mobileMenu';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DesktopMenu from 'components/menu/desktopMenu';
+import { useRouter } from 'next/dist/client/router';
 
 const Header = () => {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen((prevState) => !prevState);
 
+  useEffect(() => {
+    router.events.on('routeChangeStart', () => setIsMenuOpen(false))
+  }, [isMenuOpen, router.events])
+
   return (
-    <Container>
+    <Styled.Container>
       <Logo className="logo" />
-      <MenuButton onClick={toggleMenu}>
+      <Styled.MenuButton isMenuOpen={isMenuOpen} onClick={toggleMenu}>
         <Menu />
-      </MenuButton>
+      </Styled.MenuButton>
       <MobileMenu isOpen={isMenuOpen} />
       <DesktopMenu />
-    </Container>
+    </Styled.Container>
   );
 };
 

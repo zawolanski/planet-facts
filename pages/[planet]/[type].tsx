@@ -19,9 +19,7 @@ const Planet = ({
     <Head>
       <title>THE PLANETS - {upperFirst(name)}</title>
     </Head>
-      <section>
-        <Description name={name} {...props} />
-      </section>
+      <Description name={name} {...props} />
       <Information
         radius={radius}
         temperature={temperature}
