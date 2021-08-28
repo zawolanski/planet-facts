@@ -4,7 +4,8 @@ import { GraphQLClient } from 'graphql-request';
 import { getPlanet, planets } from 'graphql/planet';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { IContent, IParams, IPlanet } from 'types/pages/planet';
-import { omit } from 'lodash';
+import { omit, upperFirst } from 'lodash';
+import Head  from 'next/head';
 
 const client = new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHCMS_URL as string);
 
@@ -15,6 +16,9 @@ const Planet = ({
 }) => {
   return (
     <>
+    <Head>
+      <title>THE PLANETS - {upperFirst(name)}</title>
+    </Head>
       <section>
         <Description name={name} {...props} />
       </section>
