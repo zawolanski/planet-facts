@@ -4,4 +4,13 @@ module.exports = {
   images: {
     domains: ['media.graphcms.com'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/mercury/overview',
+        permanent: true,
+      },
+    ]
+  },
 };
