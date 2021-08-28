@@ -49,8 +49,7 @@ export const ListItemLink = styled.a<IStyledMenuItemProps>`
     font-size: 11px;
     line-height: 1;
     letter-spacing: 1px;
-    padding: 0;
-    padding-top: 20px;
+    padding: 20px 0 25px;
     color: ${({ theme }) => theme.color.white__075};
     border: 0;
     height: 100%;

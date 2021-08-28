@@ -29,7 +29,7 @@ export const sizes: Sizes = {
   saturn: {
     mobile: 256,
     tablet: 422,
-    desktop: 666,
+    desktop: 550,
   },
   uranus: {
     mobile: 176,
