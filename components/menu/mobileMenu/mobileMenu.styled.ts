@@ -10,7 +10,7 @@ export const Navigation = styled.nav`
   width: 100%;
   padding-top: 4px;
   overflow-y: auto;
-  background-color: ${({theme}) => theme.color.black};
+  background-color: ${({ theme }) => theme.color.black};
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     display: none;

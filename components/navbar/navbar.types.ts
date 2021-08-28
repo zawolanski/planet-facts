@@ -1,3 +1,3 @@
 export interface IMenuButtonProps {
-    isMenuOpen: boolean;
+  isMenuOpen: boolean;
 }

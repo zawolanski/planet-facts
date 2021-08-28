@@ -8,7 +8,6 @@ import { useEffect } from 'react';
 const container = { show: { transition: { staggerChildren: 0.1 } } };
 
 const MobileMenu = ({ isOpen }: IMobileMenu) => {
-
   useEffect(() => {
     document.body.style.overflowY = isOpen ? 'hidden' : 'visible';
   }, [isOpen]);
@@ -16,7 +15,13 @@ const MobileMenu = ({ isOpen }: IMobileMenu) => {
   return (
     <AnimatePresence>
       {isOpen ? (
-        <Navigation as={motion.nav} variants={container} initial="hidden" animate="show" exit="exit">
+        <Navigation
+          as={motion.nav}
+          variants={container}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+        >
           <motion.ul>
             {planets.map(({ id, planet }) => (
               <MenuItem key={id} href={`/${planet}/overview`} color={planet}>
@@ -28,6 +33,6 @@ const MobileMenu = ({ isOpen }: IMobileMenu) => {
       ) : null}
     </AnimatePresence>
   );
-}
+};
 
 export default MobileMenu;

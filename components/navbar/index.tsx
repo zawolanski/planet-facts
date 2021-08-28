@@ -13,8 +13,8 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen((prevState) => !prevState);
 
   useEffect(() => {
-    router.events.on('routeChangeStart', () => setIsMenuOpen(false))
-  }, [isMenuOpen, router.events])
+    router.events.on('routeChangeStart', () => setIsMenuOpen(false));
+  }, [isMenuOpen, router.events]);
 
   return (
     <Styled.Container>
