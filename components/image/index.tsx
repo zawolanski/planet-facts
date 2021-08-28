@@ -10,6 +10,7 @@ const Images = ({ image, name }: IImageProps) => {
     <ImgContainer>
       <ImgWrapper $sizes={sizes} $name={name}>
         <Image
+          quality="40"
           layout="fill"
           src={query.type === 'structure' ? image.structure.url : image.overview.url}
           alt=""
