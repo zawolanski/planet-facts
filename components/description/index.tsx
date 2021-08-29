@@ -15,7 +15,7 @@ import { IDescriptionProps } from './description.types';
 import Images from 'components/image';
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
 import { useWindowSize } from 'react-use';
-import { theme } from 'styles/theme/theme';
+import { theme } from 'theme/theme';
 import { fadeInUp, fadeTransition, stagger } from 'components/image/image.animation';
 
 const TYPES = ['overview', 'structure', 'surface'];
