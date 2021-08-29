@@ -21,11 +21,10 @@ const Images = ({ image, name }: IImageProps) => {
           transition={{ opacity: { duration: 0.1 } }}
         >
           <Image
-            quality="40"
             layout="fill"
             src={query.type === 'structure' ? image.structure.url : image.overview.url}
             alt=""
-            loading="eager"
+            unoptimized
           />
           {query.type === 'surface' ? (
             <Surface

@@ -13,9 +13,10 @@ import {
 } from './description.styled';
 import { IDescriptionProps } from './description.types';
 import Images from 'components/image';
-import { AnimateSharedLayout, motion } from 'framer-motion';
+import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
 import { useWindowSize } from 'react-use';
 import { theme } from 'styles/theme/theme';
+import { fadeInUp, fadeTransition, stagger } from 'components/image/image.animation';
 
 const TYPES = ['overview', 'structure', 'surface'];
 
@@ -27,18 +28,30 @@ const Description = ({ name, text, image }: IDescriptionProps) => {
     <Container>
       <Images image={image} name={name} />
       <Content>
-        <div>
-          <Title>{name}</Title>
-          <div>
-            <Paragraph>{text.content}</Paragraph>
-            <Wikipedia>
-              Source :&nbsp;
-              <a href={text.source} rel="noreferrer">
-                Wikipedia
-              </a>
-            </Wikipedia>
-          </div>
-        </div>
+        <AnimatePresence exitBeforeEnter>
+          <motion.div
+            key={name}
+            animate="animate"
+            initial="initial"
+            exit="exit"
+            transition={stagger}
+          >
+            <Title as={motion.h1} variants={fadeInUp} transition={fadeTransition}>
+              {name}
+            </Title>
+            <motion.div>
+              <Paragraph as={motion.p} variants={fadeInUp} transition={fadeTransition}>
+                {text.content}
+              </Paragraph>
+              <Wikipedia as={motion.p} variants={fadeInUp} transition={fadeTransition}>
+                Source :&nbsp;
+                <a href={text.source} rel="noreferrer">
+                  Wikipedia
+                </a>
+              </Wikipedia>
+            </motion.div>
+          </motion.div>
+        </AnimatePresence>
         <Buttons>
           <AnimateSharedLayout>
             {TYPES.map((type) => (
