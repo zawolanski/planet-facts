@@ -24,7 +24,6 @@ const Images = ({ image, name }: IImageProps) => {
             layout="fill"
             src={query.type === 'structure' ? image.structure.url : image.overview.url}
             alt=""
-            unoptimized
           />
           {query.type === 'surface' ? (
             <Surface
@@ -40,7 +39,6 @@ const Images = ({ image, name }: IImageProps) => {
                 layout="fill"
                 src={image.surface.url}
                 alt={`The surface of ${name}`}
-                loading="eager"
               />
             </Surface>
           ) : null}
